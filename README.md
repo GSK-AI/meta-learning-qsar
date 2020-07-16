@@ -4,7 +4,7 @@ This repo contains accompanying code for the publication ["Meta-Learning Initial
 ## Instructions
 ### Cloning and setting up your environment
 ```bash
-git clone https://mygithub.gsk.com/gsk-tech/meta-learning-qsar.git
+git clone https://github.com/GSK-AI/meta-learning-qsar.git
 conda env create --name metalearning --file environment.yaml
 source activate metalearning
 ```
@@ -17,6 +17,16 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 This step requires the OpenEye license file and is necessary for running src/featurize.py. Change `<path>` to the appropriate directory.
 ```bash
 export OE_LICENSE=<path>/oe_license.txt
+```
+
+### Running tests
+Run all tests if OpenEye license is available
+```bash
+pytest
+```
+In the case that license file is not available, exclude tests that use the OEChem library
+```bash
+pytest -k "not openeye"
 ```
 ## Usage
 ### Reproducing experiments with ChEMBL20
