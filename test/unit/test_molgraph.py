@@ -19,6 +19,7 @@ TEST_ADJ = [
 ]
 
 
+@pytest.mark.openeye
 @pytest.mark.parametrize("smiles, expected_adj", list(zip(TEST_SMILES, TEST_ADJ)))
 def test_adjacency(smiles, expected_adj):
     if not oechem.OEChemIsLicensed():
@@ -34,6 +35,7 @@ def test_adjacency(smiles, expected_adj):
     assert adj.adj_mat.tolist() == expected_adj
 
 
+@pytest.mark.openeye
 def test_normalization():
     TEST_MAT = np.array([[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]])
     TEST_NORM = TEST_MAT / 4
@@ -41,6 +43,7 @@ def test_normalization():
     assert norm.tolist() == TEST_NORM.tolist()
 
 
+@pytest.mark.openeye
 @pytest.mark.parametrize(
     "x, allowable_set, unk, expected_encoding",
     [
@@ -54,6 +57,7 @@ def test_encoding(x, allowable_set, unk, expected_encoding):
     assert encoding == expected_encoding
 
 
+@pytest.mark.openeye
 def test_encoding_exception():
     with pytest.raises(Exception):
         encoding = Nodes.one_of_k_encoding(x=1, allowable_set=[], unk=False)
