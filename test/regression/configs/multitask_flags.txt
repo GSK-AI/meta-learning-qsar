@@ -1,0 +1,5 @@
+--fc_dims=32
+--batch_size=256
+--lr=-3.75
+--n_conv=2
+--epochs=2

@@ -1,0 +1,4 @@
+--fc_dims=1024
+--batch_size=512
+--lr=-3.75
+--n_conv=7
