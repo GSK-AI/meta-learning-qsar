@@ -24,7 +24,7 @@ Run all tests if OpenEye license is available
 ```bash
 pytest
 ```
-In the case that license file is not available, exclude tests that use the OEChem library
+In the case where license file is not available, exclude tests that use OpenEye OEChem library
 ```bash
 pytest -k "not openeye"
 ```
@@ -43,7 +43,6 @@ Once training is done, generate test statistics on held-out test tasks by runnin
 ./exp/test.sh 
 ```
 ### Training on custom data
-#### Training
 First featurize data from SMILES to graph representation.
 ```
 python src/featurize.py \
@@ -70,5 +69,7 @@ python src/validate_maml.py  \
 - Usage instructions can be found at the top of each file.
 - Description of available arguments for each script can be obtained by using the `--help` flag.
 - For example usage of these files, see `exp/train_and_evaluate.sh` and `exp/test.sh`.
+- `src/validate_maml.py` calls `src/evaluate_transfer_learning.py` underneath the hood, but requires users to operate on a slurm cluster. If this is not the case, one can directly use `src/evaluate_transfer_learning.py` to evaluate each checkpoint individually.
+
 ## Contact
 For questions, please feel free to reach out via email at cuong.q.nguyen@gsk.com.
