@@ -1,8 +1,13 @@
-#!/usr/bin/env python3
-"""
-Modified MAML class from https://github.com/learnables/learn2learn/blob/master/learn2learn/algorithms/maml.py
-to support running in ANIL mode.
-"""
+# Copyright Notice
+# 
+# Copyright (c) 2020 GlaxoSmithKline LLC (Kim Branson & Cuong Nguyen)
+# Copyright (c) 2019 Debajyoti Datta, Ian Bunner, Praateek Mahajan, Sebastien Arnold
+# 
+# This copyright work was created in 2020 and is based on the 
+# copyright work created in 2018 available under the MIT License at 
+# https://github.com/learnables/learn2learn/blob/master/learn2learn/algorithms/maml.py
+
+"""Modified MAML class from learn2learn that support running in ANIL mode"""
 
 import traceback
 
