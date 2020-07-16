@@ -64,7 +64,7 @@ def test_train_multitask_loadable_checkpoints(seed):
         model.load_state_dict(state_dict)
 
 
-@pytest.mark.dependency(depends=["test_train_maml_integration"])
+@pytest.mark.dependency(depends=["test_train_multitask_integration"])
 @pytest.mark.parametrize("seed", SEEDS)
 def test_train_multitask_loss_trajectory(seed):
     """Test train_multitask.py expected loss trajectory"""
