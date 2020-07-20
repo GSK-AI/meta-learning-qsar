@@ -1,0 +1,11 @@
+--noanil
+--ckpt_steps=5
+--nofirst_order
+--inner_batch_size=32
+--inner_lr=0.05
+--inner_steps=2
+--meta_batch_size=4
+--meta_lr=0.003
+--meta_steps=6
+--fc_dims=32
+--n_conv=2
